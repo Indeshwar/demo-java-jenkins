@@ -12,9 +12,8 @@ pipeline {
         //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
       }
     }
-
-    stage{
-      steps('Build'){
+    stage('Build'){
+      steps{
         sh 'mvn clean install'
       }
     }
