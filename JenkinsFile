@@ -22,7 +22,7 @@ pipeline {
     stage('Build Docker image'){
         steps{
             script{
-                sh 'docker build -t indeshwar/'
+                sh 'docker build -t indeshwar/app .'
             }
         }
     }
