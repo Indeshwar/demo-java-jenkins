@@ -3,7 +3,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Simply the artifact path
-ARG artifact=target/demo-jenkins-java-0.0.1-SNAPSHOT.jar
+ARG artifact=target/devops-integration.jar
 
 WORKDIR /opt/app
 
