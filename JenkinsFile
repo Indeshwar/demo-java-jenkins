@@ -23,6 +23,19 @@ pipeline {
         steps{
             script{
                 sh 'docker build -t indeshwar/app .'
+
+            }
+        }
+    }
+
+    stage("Push docker image to Dockerhub"){
+        steps{
+            script{
+                withCredentials([string(credentialsId: 'docker_cred', variable: 'docker_cred')]) {
+                    sh 'docker loin -u indeshwar -p ${docker_cred}'
+                    sh 'docker push indeshwar/app'
+                }
+
             }
         }
     }
