@@ -11,5 +11,5 @@ public class DemoController {
     public String hello(){
         return "Hello Pratik!";
     }
-    
+
 }
