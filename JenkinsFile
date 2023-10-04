@@ -1,8 +1,7 @@
 pipeline {
   agent{
     docker{
-      image 'maven:3.8.3-openjdk-11-slim'
-      //image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      image 'abhishekf5/maven-abhishek-docker-agent:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
 
@@ -20,12 +19,12 @@ pipeline {
       }
     }
     
-     stage('Build image'){
-      steps{
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-        sh 'docker run hello-world'
-      }
+    stage('Build Docker image'){
+        steps{
+            script{
+                sh 'docker build -t indeshwar/'
+            }
+        }
     }
   }
 }
