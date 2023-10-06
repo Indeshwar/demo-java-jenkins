@@ -1,7 +1,7 @@
 pipeline {
   agent{
     docker{
-      image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      image 'indeshwar/docker-maven'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
 
@@ -22,7 +22,7 @@ pipeline {
     stage('Build Docker image'){
         steps{
             script{
-                sh 'docker build -t indeshwar/app:${BUILD_NUMBER} .'
+                sh 'docker build -t indeshwar/app .'
 
             }
         }
