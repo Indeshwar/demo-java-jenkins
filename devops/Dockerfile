@@ -13,11 +13,6 @@ RUN apt-get install -y maven
 
 # Install Docker
 RUN apt-get install -y docker.io
-# RUN curl -fsSL https://get.docker.com -o get-docker.sh
-# RUN sh get-docker.sh
-
-# Clean up
-# RUN rm -f get-docker.sh && apt-get clean
 
 # # Define a working directory (optional)
 # WORKDIR /app
